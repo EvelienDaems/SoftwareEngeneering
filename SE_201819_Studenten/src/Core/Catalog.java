@@ -46,6 +46,7 @@ public class Catalog {
 	 * @param item
 	 */
 	@requires("item!=null")
+	@ensures("$old($this.getAllItems()).length()++1==$this.getAllItems().length()")
 	public void addItem(Item item) {
 		m_all_items.put(item.ID(), item);
 	}
@@ -53,12 +54,13 @@ public class Catalog {
 	public HashMap<Integer, Item> getAllItems() {return m_all_items;}
 
 	@requires("$this.getAllItems()!=null")
+	@ensures({"$result!=null", "$result>=0"})
 	public int getNumberOfItems() {
 		return m_all_items.size();
 	}
 
 	@requires({"$this.getAllItems().containsKey(id)", "id>0"})
-	@ensures("$result!=null")
+	@ensures({"$result!=null", "$result.ID()==id"})
 	public Item getItemByID(int id) {
 		return m_all_items.get(id);
 	}

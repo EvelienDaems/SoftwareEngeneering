@@ -18,11 +18,12 @@ public class Cart {
 	
 	/**
 	 * Add an item with quantity to the cart
+	 * A positive amount of items may be added to a cart.
 	 * 
 	 * @param item
 	 * @param quantity
 	 */
-    @requires({"quantity>=0", "item!=null"})                       // A positive amount of items may be added to a cart.
+    @requires({"quantity>=0", "item!=null"})
     @ensures("$old($this.contents().get(item))+quantity==$this.contents().get(item)")
     public void addItem(Item item, int quantity) {
 		if (m_contents.containsKey(item)) {
@@ -54,17 +55,27 @@ public class Cart {
 		return m_contents;
 	}
 
-
 	@requires({"$this.contents()!=null", "$this!=null"})
 	@ensures({"$result>=0", "$result!=null"})
-	public float getCost() {
-	    float result = 0;
-	    for(HashMap.Entry<Item, Integer> entry : m_contents.entrySet()) {
-            Item item = entry.getKey();
-            float amount = (float) entry.getValue();
+	private float getCostFloat(){
+		float result = 0;
+		for(HashMap.Entry<Item, Integer> entry : m_contents.entrySet()) {
+			Item item = entry.getKey();
+			float amount = (float) entry.getValue();
 
-            result += amount * item.price();
-        }
-        return result;
+			result += amount * item.price();
+		}
+		return result;
+	}
+
+	/**
+	 * The total cost of a cart can be returned.
+	 * The total cost should be returned as a string in the correct form for valuta.
+	 */
+	@ensures("$result.length()!=0")
+	public String getCost() {
+	    float result = getCostFloat();
+        String result_string = "€ " + result;
+        return result_string;
     }
 }
