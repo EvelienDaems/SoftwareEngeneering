@@ -45,7 +45,7 @@ public class Catalog {
 	 * 
 	 * @param item
 	 */
-	@requires("item!=null")
+	@requires({"item!=null", "$this.findMatch(item) == null"})
 	@ensures("$old($this.getAllItems()).length()++1==$this.getAllItems().length()")
 	public void addItem(Item item) {
 		m_all_items.put(item.ID(), item);
@@ -80,5 +80,15 @@ public class Catalog {
 		}
 		
 		return filtered_items;
+	}
+
+	@requires({"item!=null"})
+	public Item findMatch(Item item){
+		for(Item saved_item:m_all_items.values()){
+			if(item.name().equals(saved_item.name()) && item.desc().equals(saved_item.desc()) && item.price() == saved_item.price()){
+				return saved_item;
+			}
+		}
+		return null;
 	}
 }
