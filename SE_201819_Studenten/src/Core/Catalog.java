@@ -23,7 +23,7 @@ public class Catalog {
 	 * 
 	 * @param filename
 	 */
-	@requires("filename.length()!=0")
+	@requires("filename != null, filename.length()!=0")
 	public Catalog(String filename) {
 		
 	}
@@ -34,7 +34,7 @@ public class Catalog {
 	 * 
 	 * @param filename
 	 */
-	@requires("filename.length()!=0")
+	@requires("filename != null, filename.length()!=0")
 	public void store(String filename) {
 		
 	}
@@ -51,24 +51,27 @@ public class Catalog {
 		m_all_items.put(item.ID(), item);
 	}
 
+	@ensures({"$return != null"})
 	public HashMap<Integer, Item> getAllItems() {return m_all_items;}
 
-	@requires("$this.getAllItems()!=null")
 	@ensures({"$result!=null", "$result>=0"})
 	public int getNumberOfItems() {
 		return m_all_items.size();
 	}
 
-	@requires({"$this.getAllItems().containsKey(id)", "id>0"})
+	@requires({"id != null, $this.getAllItems().containsKey(id)", "id>0"})
 	@ensures({"$result!=null", "$result.ID()==id"})
 	public Item getItemByID(int id) {
 		return m_all_items.get(id);
 	}
-	
+
+	@ensures({"$return != null"})
 	public Set<Integer> getAllIDs() {
 		return m_all_items.keySet();
 	}
-	
+
+	@requires({"category!=null"})
+	@ensures({"$return != null"})
 	public ArrayList<Item> filterCategories(HashSet<String> categories) {
 		ArrayList<Item> filtered_items = new ArrayList<Item>();
 		

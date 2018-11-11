@@ -2,6 +2,8 @@ package Core;
 
 import java.util.HashMap;
 
+import be.ac.ua.ansymo.adbc.annotations.*;
+
 import Core.Clients.Client;
 
 public class Order {
@@ -17,6 +19,7 @@ public class Order {
 	/**
 	 * Create a new Order from a User's Cart
 	 */
+	@requires({"cart != null, client != null"})
 	public Order(Cart cart, Client client) {
 		m_oid = m_next_id;
 		m_next_id++;
@@ -24,23 +27,28 @@ public class Order {
 		m_client = client;
 		m_contents = cart.contents();
 	}
-	
+
+	@ensures({"$return != null"})
 	public HashMap<Item, Integer> getItems() {
 		return m_contents;
 	}
-	
+
+	@ensures({"$return != null"})
 	public int ID() {
 		return m_oid;
 	}
-	
+
+	@ensures({"$return != null"})
 	public Client getClient() {
 		return m_client;
 	}
-	
+
+	@ensures({"$return != null"})
 	public Order_Status getStatus() {
 		return m_status;
 	}
-	
+
+	@ensures({"$this.m_status != Order_Status.STARTED, $this.m_status != Order_Status.PAYED, $return != null"})
 	public boolean requestCancel() {
 		if (m_status != Order_Status.DELIVERED) {
 			m_status = Order_Status.CANCELED;
