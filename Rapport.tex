@@ -1,0 +1,56 @@
+\documentclass{article}
+
+% Enter the name of the subject
+\newcommand{\assignmentname}{Assignment 2: Design By Contract}
+% Your names
+\newcommand{\studentA}{Evelien Daems}
+\newcommand{\studentB}{Lars Van Roy}
+
+\title{\textmd{\textbf{Software Engineering}}\\\normalsize\vspace{0.1in}\Large{\assignmentname}\\\vspace{0.1in}\small{\textit{3 Ba INF \  2018-2019}}}
+\author{\studentA \\ \studentB}
+
+\begin{document}
+\maketitle
+\noindent
+\underline{Class Cart}\newline
+\textit{@requires(\{"quantity$>$=0", "item!=null"\})}\newline
+\textit{@ensures("\$old(\$this.contents().get(item))+quantity==\$this.contents().get(item)")}\newline
+\textit{public void addItem(Item item, int quantity)\{...\}}\newline
+Bij het toevoegen van een item aan een Cart object is het belangrijk dat het item een bestaand en geïnstantieerd object is. Want voor de gebruiker heeft het geen zin dat er een ijdel object wordt toegevoegd aan het winkelwagentje. Dit zou eveneens probleme kunnen geven bij verdere bewerkingen op Cart en dus onderweg voor errors kunnen zorgen. De vereiste dat een posititef aantal moet worden toegevoegd, is natuurlijk triviaal want het is onrealistisch dat een gebruiker een negatief aantal items in zijn of haar winkelwagen wil.\newline
+Na het toevoegen van een item moet er gegarandeerd worden dat er niets is mis gegaan tijdens het toevoegen. We zullen dus eisen dat de oude winkelwagen is geupdate met het gevraagde item en bijhorende hoeveelheid. \\
+
+\noindent
+\textit{@requires(\{"\$old(\$this.contents().containsKey(item)==true", "item!=null", "quantity$>$=0"\})} \newline
+\textit{@ensures("\$this.contents().get(item)==\$old(\$this.contents().get(item))-quantity")} \newline
+\textit{public void removeItem(Item item, int quantity) \{...\}} \newline
+Voor een item kan verwijderd worden is het belangrijk te controleren of dit ook effectief aanwezig is in de content van het Cart object. Quantity moet een positief getal zijn om een correct verloop van de removeItem() functionaliteit te garanderen. Indien een gebruiker toevallig een negatief getal zou toekennen aan de parameter dan voldoet het resultaat van de functie niet meer aan de verwachtingen die men heeft bij het uitvoeren. Dan zou het verwijderen resulteren in het toevoegen van items. Idem aan de functie addItem() eisen we de garantie dat een item effecief verminderd is in hoeveelheid met aantal quantity. \\
+
+\noindent
+\textit{@ensures(\{"\$return != null"\})} \newline
+\textit{public HashMap$<$Item, Integer$>$ contents()\{...\}} \newline
+We verwachten als gebruiker dat de content van een winkelwagen bestaat, ook al bevat deze geen elementen.\\
+
+\noindent
+\textit{@requires(\{"\$this.contents()!=null", "\$this!=null"\})}\newline
+\textit{@ensures(\{"\$result$>$=0", "\$result!=null"\})}\newline
+\textit{private float getCostFloat()\{...\}}\newline
+Deze functie hebben we zelf toegevoegd om de totale waarde van de winkelwagen in float notatie te berekenen. De contents van het object moet geïnitialiseerd zijn om de kost te kunnen berekenen en het resultaat kan niet negatief zijn. Indien dit wel het geval is zou de webshop de klant gaan betalen om producten te kopen, wat helemaal niet de bedoeling is. Het resultaat moet ook bestaan indien alles goed is verlopen.\\
+
+\noindent
+\textit{@ensures(\{"\$result != null, \$result.length()!=0"\})}\newline
+\textit{public String getCost() \{...\}}\newline
+Dit is de functionalieit die de totale prijs van de winkelwagen zal teruggeven in tekst formaat. Als gebruiker verwachten we een geldige return waarde die nooit leeg kan zijn als alles goed is verlopen.\\
+
+\noindent
+\underline{Class Catalog}\newline
+\textit{@requires(\{"item!=null", "\$this.findMatch(item) == null"\})}\newline
+\textit{@ensures("\$old(\$this.getAllItems()).length()++1==\$this.getAllItems().length()")}\newline
+\textit{public void addItem(Item item) \{...\}}\newline
+Voor het toevoegen van een item aan de catalogus wordt er door de klant evreist dat alle items uniek moeten zijn op basis van hun naam, beschrijving en prijs. Dit moet eerst worden gecontroleerd voordat we het item gaan toevoegen aan de catalogus. Nadien moet men verifi\"{e}ren of het item met succes is toegevoegd aan de catalogus. Anders zou de gebruiker er vanuitgaan dat dit item is toegevoegd en dit item gaan oproepen in een ander deel van het systeem om dan pas te ontdekken dat dit item nooit toegevoegd is geweest.\\
+
+\noindent
+\textit{@ensures(\{"\$return != null"\})}\newline
+\textit{public HashMap$<$Integer, Item$>$ getAllItems() \{...\}}\newline
+De postconditie verzekert de gebruiker ervan dat de inhoud van een catalogus altijd ge\"{i}nstantieerd is.
+
+\end{document}
