@@ -72,7 +72,7 @@ public class Cart {
 	 * The total cost of a cart can be returned.
 	 * The total cost should be returned as a string in the correct form for valuta.
 	 */
-	@ensures("$result != null, $result.length()!=0")
+	@ensures({"$result != null, $result.length()!=0"})
 	public String getCost() {
 	    float result = getCostFloat();
         String result_string = "€ " + result;

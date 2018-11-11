@@ -23,7 +23,7 @@ public class Catalog {
 	 * 
 	 * @param filename
 	 */
-	@requires("filename != null, filename.length()!=0")
+	@requires({"filename != null, filename.length()!=0"})
 	public Catalog(String filename) {
 		
 	}
