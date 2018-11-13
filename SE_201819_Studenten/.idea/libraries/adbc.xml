@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="adbc">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/adbc.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

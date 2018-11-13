@@ -1,0 +1,7 @@
+be.ac.ua.ansymo.adbc.aspects.AbstractContractEnforcer=None
+be.ac.ua.ansymo.adbc.aspects.AspectContractEnforcer=None
+be.ac.ua.ansymo.adbc.aspects.AspectPrecedence=None
+be.ac.ua.ansymo.adbc.aspects.CallStack=None
+be.ac.ua.ansymo.adbc.aspects.ClassContractEnforcer=None
+be.ac.ua.ansymo.example_bank.aspects.Precedence=None
+eclipse.preferences.version=1
