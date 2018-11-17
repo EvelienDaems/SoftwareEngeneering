@@ -45,6 +45,11 @@ public class TestFile {   // core tests all the happy day scenario' s
         assertFalse(preferences.newsletters());
         assertFalse(preferences.promotions());
         assertFalse(preferences.third_party());
+
+        preferences = new Mailing_Preferences(true, true, false);
+        assertTrue(preferences.newsletters());
+        assertTrue(preferences.promotions());
+        assertFalse(preferences.third_party());
     }
 
     //    REGISTEREDCLIENT    //

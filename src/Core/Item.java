@@ -21,7 +21,6 @@ public class Item {
 	 */
 	@requires({"price > 0"})	// The price of an item must be non-zero positive.
 	public Item(String name, String desc, float price) {
-		System.out.println(price);
 		m_name = name;
 		m_desc = desc;
 		m_price = price;
