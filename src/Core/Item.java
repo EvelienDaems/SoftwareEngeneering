@@ -19,8 +19,9 @@ public class Item {
 	 * @param desc
 	 * @param price
 	 */
-	@requires({"desc != null, name != null, desc != null, price>0", "name.length() > 0"})	// The price of an item must be non-zero positive.
+	@requires({"price > 0"})	// The price of an item must be non-zero positive.
 	public Item(String name, String desc, float price) {
+		System.out.println(price);
 		m_name = name;
 		m_desc = desc;
 		m_price = price;

@@ -29,19 +29,19 @@ public class Orders {
 		return m_orders;
 	}
 
-	@requires({"oid != null"})
+	@requires({"oid > 0"})
 	@ensures({"$result != null"})
 	public Order getOrder(int oid) {
 		return m_id_order.get(oid);
 	}
 
-	@requires({"oid != null"})
+	@requires({"oid > 0"})
 	@ensures({"$result != null"})
 	public Order_Status getOrderStatus(int oid) {
 		return m_id_order.get(oid).getStatus();
 	}
 
-	@requires({"oid != null"})
+	@requires({"oid > 0"})
 	@ensures({"$result != null"})
 	public boolean requestOrderCancel(int oid) {
 		for (Order o : m_orders) {

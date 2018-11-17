@@ -8,7 +8,7 @@ public class Category {
 	
 	private ArrayList<String> m_categories;
 
-	@ensures("$this.getCategories().length()==10")
+	@ensures("$this.getCategories.length()==10")
 	public Category() {
 		m_categories = new ArrayList<String>();
 		String[] basic_categories = {"Phone", "Tablet", "Computer", "Image", "Sound", "Home & Living", "Kitchen", "Travel", "Fashion", "Sport"};

@@ -25,6 +25,7 @@ public class Order {
 		m_next_id++;
 		
 		m_client = client;
+		System.out.println(cart);
 		m_contents = cart.contents();
 	}
 

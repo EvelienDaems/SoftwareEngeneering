@@ -55,7 +55,7 @@ public class Cart {
 		return m_contents;
 	}
 
-	@requires({"$this.contents()!=null", "$this!=null"})
+	@requires({"$this.contents()!=null"})
 	@ensures({"$result>=0", "$result!=null"})
 	private float getCostFloat(){
 		float result = 0;
