@@ -40,9 +40,9 @@ aantal binarie condities + 1 = 9 + 1 = 10 \\
 \newpage
 \maketitle
 \noindent
-\underline{independent paths}\newline
+\underline{Independent paths}\newline
 \newline
-Wanneer we beginnend van het kortst mogelijke pad verdergaan door steeds een nieuw onafhankelijke pad te nemen krijgen we een mogelijkheid om de verschillende paden voor te stellen. Een nieuw pad wordt onafhankelijk genoemd van de voorgaande paden als er in het nieuwe pad een node voorkomt die nog niet voorkwam in de voorgaande paden. Wanneer we dit doen bekomen we de volgende paden. \\
+Wanneer we beginnend van het kortst mogelijke pad verdergaan door steeds een nieuw onafhankelijk pad te nemen, krijgen we een mogelijkheid om de verschillende paden voor te stellen. Een nieuw pad wordt onafhankelijk genoemd van de voorgaande paden als er in het nieuwe pad een node voorkomt die nog niet voorkwam in de voorgaande paden. Wanneer we dit doen bekomen we de volgende paden. \\
 
 \begin{table}[h]
 	\centering
@@ -79,7 +79,7 @@ Wanneer we beginnend van het kortst mogelijke pad verdergaan door steeds een nie
 \noindent
 \underline{test cases}\newline
 \newline
-Bij nadere observatie van deze paden zien we dat het merendeel hiervan niet bereikbaar is. sommige condities kunnen niet falen zonder dat andere in het programma ook falen en omgekeerd. Uiteindelijk blijven volgende 4 paden over met bijhorende input en output. Hierbij zijn triviale inputvelden, of m.a.w. inputvelden waarvoor de waarde niet relevant is om het gewenste pad te bekomen, weggelaten. Een volledig overzicht van alle paden en welke paden nu uiteindelijk een bestaand pad door de functie hadden zijn weergegeven in appendix B.\\
+Bij nadere observatie van deze paden zien we dat het merendeel hiervan niet bereikbaar is. Sommige condities kunnen niet falen zonder dat anderen in het programma ook falen en omgekeerd. Uiteindelijk blijven volgende 4 paden over met bijhorende input en output. Hierbij zijn triviale inputvelden, of m.a.w. inputvelden waarvoor de waarde niet relevant is om het gewenste pad te bekomen, weggelaten. Een volledig overzicht van alle paden en welke paden nu uiteindelijk een bestaand pad door de functie hadden, zijn weergegeven in appendix B.\\
 
 \begin{table}[h]
 	\centering
@@ -107,7 +107,7 @@ Bij nadere observatie van deze paden zien we dat het merendeel hiervan niet bere
 
 \maketitle
 \noindent
-\underline{unit tests}\newline
+\underline{Unit tests}\newline
 \newline
 Unit tests zijn testen waarbij kleine stukjes code apart worden getest zonder afhankelijkheden etc. Door dit te doen kunnen we specifiek zoeken naar fouten in de implementatie binnen een unit. Voor elke unit worden er meerdere testcases doorlopen. Voor het core.Clients packet onderscheiden we 6 verschillende units, zijnde: Address, Client, Mailing\_Preferences, RegisteredClient, UnregisteredClient en Clients. \newline
 \newline
@@ -119,12 +119,12 @@ In de unit Client faalt de methode getRegisteredClient(string, string) om de gew
 \newline
 In de unit Mailing\_preferences faalt de functie third\_party() in sommige gevallen. Wanneer de constructor input gelijk is aan (true, true, true) is er geen probleem maar wanneer de constructor input gelijk is aan (true, true, false) geeft de funtie third\_party() plots ook true terug. Wanneer de constructor input krijgt gelijk aan (false, false, false) werkt alles wel weer normaal. \newline
 \newline
-Ten slotte heeft de unit RegisteredClient nog een probleem in de functie checkPassword(string). Deze functie zou true moeten return indien het correcte wachtwoord wordt meegegeven als string maar dit is niet het geval.
+Ten slotte heeft de unit RegisteredClient nog een probleem in de functie checkPassword(string). Deze functie zou true moeten returnen indien het correcte wachtwoord wordt meegegeven als string maar dit is niet het geval.
 
 \newpage
 \maketitle
 \noindent
-\underline{integration tests}\newline
+\underline{Integration tests}\newline
 \newline
 Integration tests zijn testen waarbij meerdere units samen getest worden. Door dit te doen kunnen we zoeken naar fouten in afhankelijkheden in units. Indien alle unittesten slagen weten we dat er niet zozeer problemen zijn in de units op zich maar dat er fouten zijn in het gebruik van de methoden van andere units.\newline
 \newline
@@ -134,7 +134,7 @@ In de beschouwde integration test worden de calls naar methoden uit core.Clients
 \newline
 \maketitle
 \noindent
-\underline{synopsis voor testen}\newline
+\underline{Synopsis voor testen}\newline
 \newline
 Testen zijn nooit volledig, er zijn steeds methoden die voor sommige situaties wel slagen en voor andere niet. Het is zeer moeilijk om af te wegen wanneer er genoeg testen geschreven zijn. De bedoeling is niet dat het uren duurt om deze testen uit te voeren voor methodes die geen vitale belangen hebben in het verloop van het programma en al evenmin dat er maar een paar testen worden geschreven voor functionaliteiten waarop het hele programma gebaseerd is. Het is dus belangrijk om hier een afweging in te maken.\newline
 \newline
@@ -145,7 +145,7 @@ Ten slotte is het ook belangrijk om zowel unit tests als integration tests te ge
 \newpage
 \maketitle
 \noindent
-\textbf{Design by contract} \newline
+\textbf{Assignment 5 - Design by contract} \newline
 \newline
 
 \maketitle
@@ -158,7 +158,7 @@ In het algemeen vereisen we bij elke functionaliteit dat er geen operatie kan wo
 \textit{@requires(\{"item!=null", "\$this.findMatch(item) == null"\})}\newline
 \textit{@ensures("\$old(\$this.getNumberOfItems())+1==\$this.getNumberOfItems()")}\newline
 \textit{public void addItem(Item item) \{...\}}\newline
-Voor het toevoegen van een item aan de catalogus wordt er door de klant evreist dat alle items uniek moeten zijn op basis van hun naam, beschrijving en prijs. Dit moet eerst worden gecontroleerd voordat we het item gaan toevoegen aan de catalogus. Nadien moet men verifi\"{e}ren of het item met succes is toegevoegd aan de catalogus. Anders zou de gebruiker er vanuitgaan dat dit item is toegevoegd en dit item gaan oproepen in een ander deel van het systeem om dan pas te ontdekken dat dit item nooit toegevoegd is geweest.\\
+Voor het toevoegen van een item aan de catalogus wordt er door de klant vereist dat alle items uniek moeten zijn op basis van hun naam, beschrijving en prijs. Dit moet eerst worden gecontroleerd voordat we het item gaan toevoegen aan de catalogus. Nadien moet men verifi\"{e}ren of het item met succes is toegevoegd aan de catalogus. Anders zou de gebruiker er vanuitgaan dat dit item is toegevoegd en dit item gaan oproepen in een ander deel van het systeem om dan pas te ontdekken dat dit item nooit toegevoegd is geweest.\\
 
 \noindent
 \textit{@requires(\{"category!=null"\})}\newline
@@ -185,7 +185,7 @@ Na het toevoegen van een item moet er gegarandeerd worden dat er niets is mis ge
 \textit{@requires(\{"\$old(\$this.contents().containsKey(item)==true", "item!=null", "quantity$>$=0"\})} \newline
 \textit{@ensures("\$this.contents().get(item)==\$old(\$this.contents().get(item))-quantity")} \newline
 \textit{public void removeItem(Item item, int quantity) \{...\}} \newline
-Voor een item kan verwijderd worden is het belangrijk te controleren of dit ook effectief aanwezig is in de content van het Cart object. Quantity moet een positief getal zijn om een correct verloop van de removeItem() functionaliteit te garanderen. Indien een gebruiker toevallig een negatief getal zou toekennen aan de parameter dan voldoet het resultaat van de functie niet meer aan de verwachtingen die men heeft bij het uitvoeren. Dan zou het verwijderen resulteren in het toevoegen van items. Idem aan de functie addItem() eisen we de garantie dat een item effecief verminderd is in hoeveelheid met aantal quantity. \\
+Voor een item kan verwijderd worden is het belangrijk te controleren of dit ook effectief aanwezig is in de content van het Cart object. Quantity moet een positief getal zijn om een correct verloop van de removeItem() functionaliteit te garanderen. Indien een gebruiker toevallig een negatief getal zou toekennen aan de parameter dan voldoet het resultaat van de functie niet meer aan de verwachtingen die men heeft bij het uitvoeren. Dan zou het verwijderen resulteren in het toevoegen van items. Idem aan de functie addItem() eisen we de garantie dat een item effectief verminderd is in hoeveelheid met aantal quantity. \\
 
 \noindent
 \textit{@requires(\{"\$this.contents()!=null"\})}\newline
@@ -210,7 +210,7 @@ De Catalog moet verplicht standaard 10 categori\"{e}n bevatten die staan opgesom
 \textit{@requires(\{"category.length()!=0", "!\$this.getCategories().contains(category)"\})}\newline
 \textit{@ensures(\{"\$this.getCategories().contains(category)==true", "\$old(\$this.getCategories().size())+1==\$this.getCategories().size()"\})}\newline
 \textit{public void addCategory(String category)\{...\}}\newline
-Voor het toevoegen van een categorie toe te laten, willen we eerst kijken of categorie geen lege string is, want het is onmogelijk om een lege categorie te hebben. Ten tweede moeten alle categori\"{e}n uniek zijn en controleren we of de in te voegen string als geen deel uitmaakt van de categori\"{e}n. \\
+Voor het toevoegen van een categorie toe te laten, willen we eerst kijken of categorie geen lege string is, want het is onmogelijk om een lege categorie te hebben. Ten tweede moeten alle categori\"{e}n uniek zijn en controleren we of de in te voegen string al geen deel uitmaakt van de categori\"{e}n. \\
 
 \noindent
 \underline{Class Item}\newline
