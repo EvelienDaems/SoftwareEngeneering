@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.12)  18 NOV 2018 21:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.11)  18 NOV 2018 22:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -339,27 +339,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 156--162
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--167
+Underfull \hbox (badness 10000) in paragraph at lines 163--168
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--173
 
  []
 
 [6]
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¯ in font cmr10!
-
-Overfull \hbox (18.88385pt too wide) in paragraph at lines 170--176
+Overfull \hbox (18.88385pt too wide) in paragraph at lines 176--183
 \OT1/cmr/m/it/10 @ensures("\OT1/cmr/m/sl/10 $\OT1/cmr/m/it/10 old(\OT1/cmr/m/sl
 /10 $\OT1/cmr/m/it/10 this.contents().get(item))+quantity==\OT1/cmr/m/sl/10 $\O
 T1/cmr/m/it/10 this.contents().get(item)") 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--176
+Underfull \hbox (badness 10000) in paragraph at lines 176--183
 
  []
 
 
-Overfull \hbox (65.19264pt too wide) in paragraph at lines 177--182
+Overfull \hbox (65.19264pt too wide) in paragraph at lines 184--189
 \OT1/cmr/m/it/10 @requires(\OMS/cmsy/m/n/10 f\OT1/cmr/m/it/10 "\OT1/cmr/m/sl/10
  $\OT1/cmr/m/it/10 old(\OT1/cmr/m/sl/10 $\OT1/cmr/m/it/10 this.contents().conta
 insKey(item)==true", "item!=null", "quantity$\OML/cmm/m/it/10 >$\OT1/cmr/m/it/1
@@ -367,43 +369,41 @@ insKey(item)==true", "item!=null", "quantity$\OML/cmm/m/it/10 >$\OT1/cmr/m/it/1
  []
 
 
-Overfull \hbox (14.79497pt too wide) in paragraph at lines 177--182
+Overfull \hbox (14.79497pt too wide) in paragraph at lines 184--189
 \OT1/cmr/m/it/10 @ensures("\OT1/cmr/m/sl/10 $\OT1/cmr/m/it/10 this.contents().g
 et(item)==\OT1/cmr/m/sl/10 $\OT1/cmr/m/it/10 old(\OT1/cmr/m/sl/10 $\OT1/cmr/m/i
 t/10 this.contents().get(item))-quantity") 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--182
-
- []
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¯ in font cmr10!
-
-Underfull \hbox (badness 10000) in paragraph at lines 183--188
+Underfull \hbox (badness 10000) in paragraph at lines 184--189
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 189--193
+Underfull \hbox (badness 10000) in paragraph at lines 190--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 196--200
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 196--201
+Underfull \hbox (badness 10000) in paragraph at lines 203--208
 
  []
 
 
-Overfull \hbox (4.58823pt too wide) in paragraph at lines 202--207
+Overfull \hbox (4.58823pt too wide) in paragraph at lines 209--214
 \OT1/cmr/m/it/10 @requires(\OMS/cmsy/m/n/10 f\OT1/cmr/m/it/10 "category.length(
 )!=0", "!\OT1/cmr/m/sl/10 $\OT1/cmr/m/it/10 this.getCategories().contains(categ
 ory)"\OMS/cmsy/m/n/10 g\OT1/cmr/m/it/10 ) 
  []
 
 
-Overfull \hbox (232.59251pt too wide) in paragraph at lines 202--207
+Overfull \hbox (232.59251pt too wide) in paragraph at lines 209--214
 \OT1/cmr/m/it/10 @ensures(\OMS/cmsy/m/n/10 f\OT1/cmr/m/it/10 "\OT1/cmr/m/sl/10 
 $\OT1/cmr/m/it/10 this.getCategories().contains(category)==true", "\OT1/cmr/m/s
 l/10 $\OT1/cmr/m/it/10 old(\OT1/cmr/m/sl/10 $\OT1/cmr/m/it/10 this.getCategorie
@@ -412,7 +412,7 @@ OMS/cmsy/m/n/10 g\OT1/cmr/m/it/10 )
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--207
+Underfull \hbox (badness 10000) in paragraph at lines 209--214
 
  []
 
@@ -420,20 +420,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 202--207
 <control_flow_graph.png, id=37, 575.14874pt x 683.55376pt>
 File: control_flow_graph.png Graphic file (type png)
 <use control_flow_graph.png>
-Package pdftex.def Info: control_flow_graph.png  used on input line 220.
+Package pdftex.def Info: control_flow_graph.png  used on input line 227.
 (pdftex.def)             Requested size: 345.0pt x 410.04155pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--221
+Underfull \hbox (badness 10000) in paragraph at lines 224--228
 
  []
 
 [9 <./control_flow_graph.png>]
-Underfull \hbox (badness 10000) in alignment at lines 254--254
+Underfull \hbox (badness 10000) in alignment at lines 261--261
 [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--257
+Underfull \hbox (badness 10000) in paragraph at lines 232--264
 
  []
 
@@ -441,10 +441,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--257
 
 ] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 1616 strings out of 494923
- 23194 string characters out of 6180741
+ 1617 strings out of 494923
+ 23203 string characters out of 6180741
  86202 words of memory out of 5000000
- 4917 multiletter control sequences out of 15000+600000
+ 4918 multiletter control sequences out of 15000+600000
  8931 words of font info for 31 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  41i,11n,25p,697b,307s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -457,7 +457,7 @@ xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on report.pdf (10 pages, 155223 bytes).
+Output written on report.pdf (10 pages, 156814 bytes).
 PDF statistics:
  76 PDF objects out of 1000 (max. 8388607)
  52 compressed objects within 1 object stream

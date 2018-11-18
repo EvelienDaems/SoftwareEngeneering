@@ -150,7 +150,7 @@ Ten slotte is het ook belangrijk om zowel unit tests als integration tests te ge
 
 \maketitle
 \noindent
-In het algemeen vereisen we bij elke functionaliteiten dat er geen operatie kan worden verricht op null objecten en dat de teruggegeven waarden eveneens geen null object kunnen bevatten.\newline
+In het algemeen vereisen we bij elke functionaliteit dat er geen operatie kan worden verricht op null objecten en dat de teruggegeven waarden eveneens geen null object kunnen bevatten. Hieronder geven we een kort overzicht van contracten die wat meer context hebben.\newline
 \newline
 
 \noindent
@@ -161,17 +161,24 @@ In het algemeen vereisen we bij elke functionaliteiten dat er geen operatie kan 
 Voor het toevoegen van een item aan de catalogus wordt er door de klant evreist dat alle items uniek moeten zijn op basis van hun naam, beschrijving en prijs. Dit moet eerst worden gecontroleerd voordat we het item gaan toevoegen aan de catalogus. Nadien moet men verifi\"{e}ren of het item met succes is toegevoegd aan de catalogus. Anders zou de gebruiker er vanuitgaan dat dit item is toegevoegd en dit item gaan oproepen in een ander deel van het systeem om dan pas te ontdekken dat dit item nooit toegevoegd is geweest.\\
 
 \noindent
+\textit{@requires(\{"category!=null"\})}\newline
+\textit{@ensures(\{"\$result != null"\})}\newline
+\textit{public ArrayList$<$Item$>$ filterCategories(HashSet$<$String$>$ categories)\{...\}}\newline
+De klant vereist in de extra specificaties dat het systeem in staat moet zijn om te filteren op de juiste categorie. Hiervoor is een functionaliteit voorzien die als input een category of meerdere category vraagt. Het is van belang dat we controleren dat dit een geldige set is en dus geen leeg object voorstelt. Als teruggegeven waarde moet er altijd een lijst teruggegeven worden met de gevonden items. Maar deze lijst kan nooit een null object zijn want zelfs al zijn er geen items gevonden, er zal dan simpelweg een lege lijst worden verwacht. \\
+
+\noindent
 \textit{@requires(\{"item!=null"\})}\newline
 \textit{public Item findMatch(Item item)\{...\}}\newline
 Een eigen geschreven functionaliteit om aan de specificatie te voldoen waarin beschreven staat dat een Item uniek moet zijn in de zin van een unieke naam, beschrijving en prijs in de catalogus. Hier is het wel toegestaan om een return waarde te hebben van null aangezien dit betekent dat geen enkel item werd gevonden dat overeenkwam met de input. \\
 
 \newpage
 
+\noindent
 \underline{Class Cart}\newline
 \textit{@requires(\{"quantity$>$=0", "item!=null"\})}\newline
 \textit{@ensures("\$old(\$this.contents().get(item))+quantity==\$this.contents().get(item)")}\newline
 \textit{public void addItem(Item item, int quantity)\{...\}}\newline
-Bij het toevoegen van een item aan een Cart object is het belangrijk dat het item een bestaand en geïnstantieerd object is. Want voor de gebruiker heeft het geen zin dat er een ijdel object wordt toegevoegd aan het winkelwagentje. Dit zou eveneens problemen kunnen geven bij verdere bewerkingen op Cart en dus onderweg voor errors kunnen zorgen. De vereiste dat een posititef aantal moet worden toegevoegd, is natuurlijk triviaal want het is onrealistisch dat een gebruiker een negatief aantal items in zijn of haar winkelwagen wil.\newline
+Bij het toevoegen van een item aan een Cart object is het belangrijk dat het item een bestaand en ge\"{i}nstantieerd object is. Want voor de gebruiker heeft het geen zin dat er een ijdel object wordt toegevoegd aan het winkelwagentje. Dit zou eveneens problemen kunnen geven bij verdere bewerkingen op Cart en dus onderweg voor errors kunnen zorgen. De vereiste dat een posititef aantal moet worden toegevoegd, is natuurlijk triviaal want het is onrealistisch dat een gebruiker een negatief aantal items in zijn of haar winkelwagen wil.\newline
 Na het toevoegen van een item moet er gegarandeerd worden dat er niets is mis gegaan tijdens het toevoegen. We zullen dus eisen dat de oude winkelwagen is geupdate met het gevraagde item en bijhorende hoeveelheid. \\
 
 \noindent
@@ -184,12 +191,12 @@ Voor een item kan verwijderd worden is het belangrijk te controleren of dit ook 
 \textit{@requires(\{"\$this.contents()!=null"\})}\newline
 \textit{@ensures(\{"\$result$>$=0", "\$result!=null"\})}\newline
 \textit{private float getCostFloat()\{...\}}\newline
-Deze functie hebben we zelf toegevoegd om de totale waarde van de winkelwagen in float notatie te berekenen. De contents van het object moet geïnitialiseerd zijn om de kost te kunnen berekenen en het resultaat kan niet negatief zijn. Indien dit wel het geval is zou de webshop de klant gaan betalen om producten te kopen, wat helemaal niet de bedoeling is. Het resultaat moet ook bestaan indien alles goed is verlopen.\\
+Deze functie hebben we zelf toegevoegd om de totale waarde van de winkelwagen in float notatie te berekenen. De contents van het object moet ge\"{i}nitialiseerd zijn om de kost te kunnen berekenen en het resultaat kan niet negatief zijn. Indien dit wel het geval is zou de webshop de klant gaan betalen om producten te kopen, wat helemaal niet de bedoeling is. Het resultaat moet ook bestaan indien alles goed is verlopen.\\
 
 \noindent
-\textit{@ensures(\{"\$result != null, \$result.length()!=0"\})}\newline
+\textit{@ensures(\{"\$result.length()!=0"\})}\newline
 \textit{public String getCost() \{...\}}\newline
-Dit is de functionalieit die de totale prijs van de winkelwagen zal teruggeven in tekst formaat. Als gebruiker verwachten we een geldige return waarde die nooit leeg kan zijn als alles goed is verlopen.\\
+Dit is de functionalieit die de totale prijs van de winkelwagen zal teruggeven in tekst formaat. Als gebruiker verwachten we een geldige return waarde die nooit leeg kan zijn als alles goed is verlopen en met leeg bedoelen we een string van lengte nul. Een string zal nooit null kunnen zijn.\\
 
 \newpage
 
@@ -207,7 +214,7 @@ Voor het toevoegen van een categorie toe te laten, willen we eerst kijken of cat
 
 \noindent
 \underline{Class Item}\newline
-\textit{@requires(\{"price > 0"\})}\newline
+\textit{@requires(\{"price $>$ 0"\})}\newline
 \textit{public Item(String name, String desc, float price) \{...\}}\newline
 De prijs van een item in de catalogus moet een niet-nul positief getal zijn volgens de specificaties.
 
