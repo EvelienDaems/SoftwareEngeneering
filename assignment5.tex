@@ -21,6 +21,10 @@
 \begin{document}
 \maketitle
 \noindent
+\textbf{Calculate() function analysis} \newline
+\newline
+\maketitle
+\noindent
 \underline{Control Flow Graph}\newline
 \newline
 Een control flow graph is een visuele weergave van een programma waarmee alle mogelijke paden doorheen een programma kunnen gegenereerd worden. Elke binaire node (een node waar twee pijlen uitkomen) komt overheen met een conditie in het programma. Elke mogelijke sequentie van nodes dat eindigt in een eindstaat is een mogelijk pad door het programma, het is echter niet gegarandeerd dat dit pad ook bestaat. Sommige condities kunnen enkel slagen indien andere condities ook slagen en of slagen sowieso x aantal keren. Het is dus niet omdat de sequentie bestaat in de control flow graph dat het ook een mogelijk pad is. Voor de flow graph van de calculate() functie zie appendix A. \\
@@ -98,7 +102,50 @@ Bij nadere observatie van deze paden zien we dat het merendeel hiervan niet bere
 \newpage
 \maketitle
 \noindent
-\underline{appendix A}\newline
+\textbf{JUnit testing}\newline
+\newline
+
+\maketitle
+\noindent
+\underline{unit tests}\newline
+\newline
+Unit tests zijn testen waarbij kleine stukjes code apart worden getest zonder afhankelijkheden etc. Door dit te doen kunnen we specifiek zoeken naar fouten in de implementatie binnen een unit. Voor elke unit worden er meerdere testcases doorlopen. Voor het core.Clients packet onderscheiden we 6 verschillende units, zijnde: Address, Client, Mailing\_Preferences, RegisteredClient, UnregisteredClient en Clients. \newline
+\newline
+Voor elk van deze units schrijven we voor elke methode één of meerdere testen waarbij we de verwachte output vergelijken met de eigenlijke output.\newline
+\newline
+Dit lukt voor 3 van de 6 units maar bij de 3 andere zijn er assertions die foutieve returns opvangen. \newline
+\newline
+In de unit Client faalt de methode getRegisteredClient(string, string) om de gewenste return te geven. Deze zou, indien er bestaande data wordt opgegeven, een referentie moeten geven naar het gerefereerde Client object maar dit doet hij niet, hij returned null onafhankelijk van de gegeven input.\newline
+\newline
+In de unit Mailing\_preferences faalt de functie third\_party() in sommige gevallen. Wanneer de constructor input gelijk is aan (true, true, true) is er geen probleem maar wanneer de constructor input gelijk is aan (true, true, false) geeft de funtie third\_party() plots ook true terug. Wanneer de constructor input krijgt gelijk aan (false, false, false) werkt alles wel weer normaal. \newline
+\newline
+Ten slotte heeft de unit RegisteredClient nog een probleem in de functie checkPassword(string). Deze functie zou true moeten return indien het correcte wachtwoord wordt meegegeven als string maar dit is niet het geval.
+
+\newpage
+\maketitle
+\noindent
+\underline{integration tests}\newline
+\newline
+Integration tests zijn testen waarbij meerdere units samen getest worden. Door dit te doen kunnen we zoeken naar fouten in afhankelijkheden in units. Indien alle unittesten slagen weten we dat er niet zozeer problemen zijn in de units op zich maar dat er fouten zijn in het gebruik van de methoden van andere units.\newline
+\newline
+Deze test bestaat in essentie uit hetzelfde als de unit tests. We maken opnieuw gebruik van verschillende methodes maar in plaats van enkel methodes van 1 unit te beschouwen beschouwen we meerdere methoden uit meerdere units en het effect dat ze op andere methoden kunnen hebben. \newline
+\newline
+In de beschouwde integration test worden de calls naar methoden uit core.Clients in het pakket Core onderzocht. Deze methoden worden voor zover de test reikt goed gebruikt en de teruggegeven waarden komen steeds overeen met de verwachte output.\newline
+\newline
+\maketitle
+\noindent
+\underline{synopsis voor testen}\newline
+\newline
+Testen zijn nooit volledig, er zijn steeds methoden die voor sommige situaties wel slagen en voor andere niet. Het is zeer moeilijk om af te wegen wanneer er genoeg testen geschreven zijn. De bedoeling is niet dat het uren duurt om deze testen uit te voeren voor methodes die geen vitale belangen hebben in het verloop van het programma en al evenmin dat er maar een paar testen worden geschreven voor functionaliteiten waarop het hele programma gebaseerd is. Het is dus belangrijk om hier een afweging in te maken.\newline
+\newline
+Ook al zijn niet altijd alle situaties beschouwd, door een percentage van alle mogelijke situaties te beschouwen en hierop extensief te testen beperken we wel het risico op fouten. Er is namelijk een deel van de situaties die zich kunnen voordoen die getest zijn en waarin niets meer zou mogen vastlopen. \newline
+\newline
+Ten slotte is het ook belangrijk om zowel unit tests als integration tests te gebruiken. Unit tests zijn zeer handig om fouten binnen units op te zoeken maar deze zijn niet toereikend over het gehele systeem. Fouten die ontstaan door combinaties van units zijn veel voorkomend en moeilijker te vinden dan fouten in units zelf dus is het ook belangrijk om integration tests te schrijven.
+
+\newpage
+\maketitle
+\noindent
+\textbf{appendix A}\newline
 \newline
 \includegraphics[width=\textwidth]{control_flow_graph}
 
@@ -106,7 +153,7 @@ Bij nadere observatie van deze paden zien we dat het merendeel hiervan niet bere
 \begin{landscape}
 	\maketitle
 	\noindent
-	\underline{appendix B}\newline
+	\textbf{appendix B}\newline
 	\newline
 	\begin{table}[h]
 		\centering
