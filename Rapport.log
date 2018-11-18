@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.11)  11 NOV 2018 23:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.11)  18 NOV 2018 14:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -44,32 +44,32 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 13.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 15.
+(Font)              <7> on input line 16.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 15.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 16.
+(Font)              <5> on input line 16.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 17.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 17.
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¯ in font cmr10!
 
-Overfull \hbox (18.88385pt too wide) in paragraph at lines 14--21
+Overfull \hbox (18.88385pt too wide) in paragraph at lines 14--22
 \OT1/cmr/m/it/10 @ensures("\OT1/cmr/m/sl/10 $\OT1/cmr/m/it/10 old(\OT1/cmr/m/sl
 /10 $\OT1/cmr/m/it/10 this.contents().get(item))+quantity==\OT1/cmr/m/sl/10 $\O
 T1/cmr/m/it/10 this.contents().get(item)") 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--21
+Underfull \hbox (badness 10000) in paragraph at lines 14--22
 
  []
 
 
-Overfull \hbox (65.19264pt too wide) in paragraph at lines 22--27
+Overfull \hbox (65.19264pt too wide) in paragraph at lines 23--28
 \OT1/cmr/m/it/10 @requires(\OMS/cmsy/m/n/10 f\OT1/cmr/m/it/10 "\OT1/cmr/m/sl/10
  $\OT1/cmr/m/it/10 old(\OT1/cmr/m/sl/10 $\OT1/cmr/m/it/10 this.contents().conta
 insKey(item)==true", "item!=null", "quantity$\OML/cmm/m/it/10 >$\OT1/cmr/m/it/1
@@ -77,55 +77,73 @@ insKey(item)==true", "item!=null", "quantity$\OML/cmm/m/it/10 >$\OT1/cmr/m/it/1
  []
 
 
-Overfull \hbox (14.79497pt too wide) in paragraph at lines 22--27
+Overfull \hbox (14.79497pt too wide) in paragraph at lines 23--28
 \OT1/cmr/m/it/10 @ensures("\OT1/cmr/m/sl/10 $\OT1/cmr/m/it/10 this.contents().g
 et(item)==\OT1/cmr/m/sl/10 $\OT1/cmr/m/it/10 old(\OT1/cmr/m/sl/10 $\OT1/cmr/m/i
 t/10 this.contents().get(item))-quantity") 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 22--27
+Underfull \hbox (badness 10000) in paragraph at lines 23--28
 
  []
 
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¯ in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--32
+Underfull \hbox (badness 10000) in paragraph at lines 29--34
 
  []
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¯ in font cmr10!
-
-Underfull \hbox (badness 10000) in paragraph at lines 33--38
+Underfull \hbox (badness 10000) in paragraph at lines 35--39
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--43
+Underfull \hbox (badness 10000) in paragraph at lines 40--46
 
  []
 
 
-Overfull \hbox (11.81729pt too wide) in paragraph at lines 44--50
-\OT1/cmr/m/it/10 @ensures("\OT1/cmr/m/sl/10 $\OT1/cmr/m/it/10 old(\OT1/cmr/m/sl
-/10 $\OT1/cmr/m/it/10 this.getAllItems()).length()++1==\OT1/cmr/m/sl/10 $\OT1/c
-mr/m/it/10 this.getAllItems().length()") 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 44--50
+Underfull \hbox (badness 10000) in paragraph at lines 47--51
 
  []
 
-[2] (./Rapport.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--57
+
+ []
+
+[2]
+Overfull \hbox (4.58823pt too wide) in paragraph at lines 58--63
+\OT1/cmr/m/it/10 @requires(\OMS/cmsy/m/n/10 f\OT1/cmr/m/it/10 "category.length(
+)!=0", "!\OT1/cmr/m/sl/10 $\OT1/cmr/m/it/10 this.getCategories().contains(categ
+ory)"\OMS/cmsy/m/n/10 g\OT1/cmr/m/it/10 ) 
+ []
+
+
+Overfull \hbox (232.59251pt too wide) in paragraph at lines 58--63
+\OT1/cmr/m/it/10 @ensures(\OMS/cmsy/m/n/10 f\OT1/cmr/m/it/10 "\OT1/cmr/m/sl/10 
+$\OT1/cmr/m/it/10 this.getCategories().contains(category)==true", "\OT1/cmr/m/s
+l/10 $\OT1/cmr/m/it/10 old(\OT1/cmr/m/sl/10 $\OT1/cmr/m/it/10 this.getCategorie
+s().size())+1==\OT1/cmr/m/sl/10 $\OT1/cmr/m/it/10 this.getCategories().size()"\
+OMS/cmsy/m/n/10 g\OT1/cmr/m/it/10 ) 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--63
+
+ []
+
+[3] (./Rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 259 strings out of 494923
- 2892 string characters out of 6180741
- 52045 words of memory out of 5000000
- 3644 multiletter control sequences out of 15000+600000
+ 258 strings out of 494923
+ 2883 string characters out of 6180741
+ 53045 words of memory out of 5000000
+ 3643 multiletter control sequences out of 15000+600000
  8623 words of font info for 30 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  23i,6n,17p,637b,199s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -137,10 +155,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on Rapport.pdf (2 pages, 94053 bytes).
+Output written on Rapport.pdf (3 pages, 96691 bytes).
 PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 46 PDF objects out of 1000 (max. 8388607)
+ 32 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
